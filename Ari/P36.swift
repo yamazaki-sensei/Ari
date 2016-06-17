@@ -18,7 +18,7 @@ private let input =
      ".W.W......W.\n",
      "..W.......W.\n"]
 
-class P36: Base {
+final class P36: Base {
 
     static func main() {
         P36(input: input).main()

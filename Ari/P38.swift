@@ -18,7 +18,7 @@ private let input =
      ".####.###.\n",
      "....#...G#\n"]
 
-class P38: Base {
+final class P38: Base {
 
     static func main() {
         P38(input: input).main()

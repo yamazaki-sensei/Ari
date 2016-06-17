@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class P39:Base {
+final class P39:Base {
 
     static func main() {
         P39(n: 10).main()

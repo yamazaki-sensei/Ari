@@ -14,7 +14,7 @@
  */
 
 
-class P35:Base {
+final class P35:Base {
 
     static func main() {
         P35(a: [1, 2, 4, 7], k: 13).main()
