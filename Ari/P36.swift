@@ -6,7 +6,23 @@
 //  Copyright © 2016年 Hiraku Ohno. All rights reserved.
 //
 
+private let input =
+    ["W........WW.\n",
+     ".WWW.....WWW\n",
+     "....WW...WW.\n",
+     ".........WW.\n",
+     "............\n",
+     "..W......W..\n",
+     ".W.W.....WW.\n",
+     "W.W.W.....W.\n",
+     ".W.W......W.\n",
+     "..W.......W.\n"]
+
 class P36: Base {
+
+    static func main() {
+        P36(input: input).main()
+    }
 
     var field: [[Character]]
     let M: Int

@@ -6,7 +6,23 @@
 //  Copyright © 2016年 Hiraku Ohno. All rights reserved.
 //
 
+private let input =
+    ["#S######.#\n",
+     "......#..#\n",
+     ".#.##.##.#\n",
+     ".#........\n",
+     "##.##.####\n",
+     "....#....#\n",
+     ".#######.#\n",
+     "....#.....\n",
+     ".####.###.\n",
+     "....#...G#\n"]
+
 class P38: Base {
+
+    static func main() {
+        P38(input: input).main()
+    }
 
     let INF = 100000000
     typealias P = (Int, Int)

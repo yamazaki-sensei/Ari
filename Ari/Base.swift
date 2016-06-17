@@ -7,5 +7,6 @@
 //
 
 protocol Base {
+    static func main()
     func main()
 }
