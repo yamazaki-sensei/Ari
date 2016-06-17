@@ -6,4 +6,4 @@
 //  Copyright © 2016年 Hiraku Ohno. All rights reserved.
 //
 
-
+P39.main()
