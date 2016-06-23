@@ -23,7 +23,7 @@ class P53: Base {
     }
 
     static func main() {
-        P52(items: [(2, 3), (1, 2), (3, 4), (2, 2)], W: 5).main()
+        P53(items: [(2, 3), (1, 2), (3, 4), (2, 2)], W: 5).main()
     }
 
     func main() {
