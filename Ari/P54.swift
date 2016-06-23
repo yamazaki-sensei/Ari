@@ -16,7 +16,7 @@ class P54: Base {
 
     var dp: [[Int]] = Array<Array<Int>>(count: 200, repeatedValue: Array<Int>(count: 200, repeatedValue: 0))
 
-    init(items: [Prop], W: Int) {
+    private init(items: [Prop], W: Int) {
         self.n = items.count
         self.items = items
         self.W = W

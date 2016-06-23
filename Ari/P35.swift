@@ -25,7 +25,7 @@ final class P35:Base {
     let a: [Int]
     let k: Int
 
-    init(a: [Int], k: Int) {
+    private init(a: [Int], k: Int) {
         self.n = a.count
         self.a = a
         self.k = k

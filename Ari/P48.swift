@@ -15,7 +15,7 @@ class P48: Base {
         P48(R: 10, X: [1, 7, 15, 20, 30, 50]).main()
     }
 
-    init(R: Int, X: [Int]) {
+    private init(R: Int, X: [Int]) {
         self.R = R
         self.X = X
         self.N = X.count

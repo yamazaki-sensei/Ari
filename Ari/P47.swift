@@ -15,7 +15,7 @@ class P47: Base {
     let N: Int
     let S: [Character]
 
-    init(text: String) {
+    private init(text: String) {
         S = Array(text.characters)
         N = S.count
     }

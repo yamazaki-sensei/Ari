@@ -40,7 +40,7 @@ final class P38: Base {
     var d: [[Int]]!
 
 
-    init(input: [String]) {
+    private init(input: [String]) {
         maze = input.map {Array($0.characters)}
         N = input[0].characters.count - 1
         M = input.count

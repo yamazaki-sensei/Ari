@@ -18,7 +18,7 @@ final class P39:Base {
     var used: [Bool]
     var perm: [Int]
     let n: Int
-    init(n: Int) {
+    private init(n: Int) {
         used = Array<Bool>(count: n, repeatedValue: false)
         perm = Array<Int>(count: n, repeatedValue: -1)
         self.n = n

@@ -6,5 +6,4 @@
 //  Copyright © 2016年 Hiraku Ohno. All rights reserved.
 //
 
-P53.main()
-P54.main()
+P57.main()

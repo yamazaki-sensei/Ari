@@ -28,7 +28,7 @@ final class P36: Base {
     let M: Int
     let N: Int
 
-    init(input: [String]) {
+    private init(input: [String]) {
         self.field = input.map {Array($0.characters)}
         self.M = input[0].characters.count
         self.N = input.count

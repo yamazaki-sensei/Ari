@@ -14,7 +14,7 @@ class P52: Base {
     let items: [Prop]
     let W: Int
 
-    init(items: [Prop], W: Int) {
+    private init(items: [Prop], W: Int) {
         self.n = items.count
         self.items = items
         self.W = W

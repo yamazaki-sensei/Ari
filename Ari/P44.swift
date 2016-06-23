@@ -13,7 +13,7 @@ class P44: Base {
     let S: [Int], T:[Int]
     var itv: [(Int, Int)]
 
-    init(S: [Int], T: [Int]) {
+    private init(S: [Int], T: [Int]) {
         self.S = S
         self.T = T
         self.N = S.count
