@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4214ED741D4257EB00393834 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214ED731D4257EB00393834 /* ArrayExtension.swift */; };
+		4214ED801D466BFC00393834 /* AriTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214ED7F1D466BFC00393834 /* AriTest.swift */; };
+		4214ED851D466C0500393834 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214ED731D4257EB00393834 /* ArrayExtension.swift */; };
+		4214ED871D466C2100393834 /* ArrayExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214ED861D466C2100393834 /* ArrayExtensionTest.swift */; };
 		4224B91D1D12B24A004B0E38 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224B91C1D12B24A004B0E38 /* main.swift */; };
 		4224B9241D12B287004B0E38 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224B9231D12B287004B0E38 /* Base.swift */; };
 		4224B9261D12B2D1004B0E38 /* P35.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224B9251D12B2D1004B0E38 /* P35.swift */; };
@@ -39,6 +43,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4214ED731D4257EB00393834 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		4214ED7D1D466BFC00393834 /* AriTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AriTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4214ED7F1D466BFC00393834 /* AriTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriTest.swift; sourceTree = "<group>"; };
+		4214ED811D466BFC00393834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4214ED861D466C2100393834 /* ArrayExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTest.swift; sourceTree = "<group>"; };
 		4224B9191D12B24A004B0E38 /* Ari */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Ari; sourceTree = BUILT_PRODUCTS_DIR; };
 		4224B91C1D12B24A004B0E38 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4224B9231D12B287004B0E38 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
@@ -60,6 +69,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4214ED7A1D466BFC00393834 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4224B9161D12B24A004B0E38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,10 +86,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4214ED721D4257D300393834 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4214ED731D4257EB00393834 /* ArrayExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		4214ED7E1D466BFC00393834 /* AriTest */ = {
+			isa = PBXGroup;
+			children = (
+				4214ED7F1D466BFC00393834 /* AriTest.swift */,
+				4214ED811D466BFC00393834 /* Info.plist */,
+				4214ED861D466C2100393834 /* ArrayExtensionTest.swift */,
+			);
+			path = AriTest;
+			sourceTree = "<group>";
+		};
 		4224B9101D12B24A004B0E38 = {
 			isa = PBXGroup;
 			children = (
 				4224B91B1D12B24A004B0E38 /* Ari */,
+				4214ED7E1D466BFC00393834 /* AriTest */,
 				4224B91A1D12B24A004B0E38 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				4224B9191D12B24A004B0E38 /* Ari */,
+				4214ED7D1D466BFC00393834 /* AriTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +125,7 @@
 		4224B91B1D12B24A004B0E38 /* Ari */ = {
 			isa = PBXGroup;
 			children = (
+				4214ED721D4257D300393834 /* Extension */,
 				4224B91C1D12B24A004B0E38 /* main.swift */,
 				4224B9231D12B287004B0E38 /* Base.swift */,
 				4224B9251D12B2D1004B0E38 /* P35.swift */,
@@ -113,6 +150,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4214ED7C1D466BFC00393834 /* AriTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4214ED821D466BFC00393834 /* Build configuration list for PBXNativeTarget "AriTest" */;
+			buildPhases = (
+				4214ED791D466BFC00393834 /* Sources */,
+				4214ED7A1D466BFC00393834 /* Frameworks */,
+				4214ED7B1D466BFC00393834 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AriTest;
+			productName = AriTest;
+			productReference = 4214ED7D1D466BFC00393834 /* AriTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4224B9181D12B24A004B0E38 /* Ari */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4224B9201D12B24A004B0E38 /* Build configuration list for PBXNativeTarget "Ari" */;
@@ -140,6 +194,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Hiraku Ohno";
 				TargetAttributes = {
+					4214ED7C1D466BFC00393834 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					4224B9181D12B24A004B0E38 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -158,11 +215,32 @@
 			projectRoot = "";
 			targets = (
 				4224B9181D12B24A004B0E38 /* Ari */,
+				4214ED7C1D466BFC00393834 /* AriTest */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		4214ED7B1D466BFC00393834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		4214ED791D466BFC00393834 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4214ED801D466BFC00393834 /* AriTest.swift in Sources */,
+				4214ED851D466C0500393834 /* ArrayExtension.swift in Sources */,
+				4214ED871D466C2100393834 /* ArrayExtensionTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4224B9151D12B24A004B0E38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +252,7 @@
 				42EE19D01D143C35002CDFA9 /* P39.swift in Sources */,
 				42F795DE1D1C19F0004BB990 /* P57.swift in Sources */,
 				42EE19D21D144BF6002CDFA9 /* P42.swift in Sources */,
+				4214ED741D4257EB00393834 /* ArrayExtension.swift in Sources */,
 				42EE19D41D16D619002CDFA9 /* P44.swift in Sources */,
 				42705F8A1D3BE55A00004B18 /* P63.swift in Sources */,
 				42F795DC1D1C02F5004BB990 /* P54.swift in Sources */,
@@ -190,6 +269,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		4214ED831D466BFC00393834 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AriTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hira.AriTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4214ED841D466BFC00393834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AriTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hira.AriTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		4224B91E1D12B24A004B0E38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -289,6 +390,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4214ED821D466BFC00393834 /* Build configuration list for PBXNativeTarget "AriTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4214ED831D466BFC00393834 /* Debug */,
+				4214ED841D466BFC00393834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4224B9141D12B24A004B0E38 /* Build configuration list for PBXProject "Ari" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
