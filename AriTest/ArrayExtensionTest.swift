@@ -11,7 +11,7 @@ import XCTest
 class ArrayExtensionTest: XCTestCase {
 
     func testCallLowerBound() {
-        let array: [Target] = [1, 2, 3, 4, 5]
-        let _ = try! array.lowerBound(1)
+        let array: [Int] = [1, 2, 3, 4, 5]
+        let _ = try! array.lowerBound(3)
     }
 }

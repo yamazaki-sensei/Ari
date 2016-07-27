@@ -16,13 +16,15 @@ enum ArrayExtensionError: ErrorType {
 protocol Target: Equatable, Comparable {
 }
 
-extension Int: Target {
+extension Int: Target { }
 
-}
+extension Float: Target { }
+
+extension Double: Target { }
 
 extension Array {
 
-    func lowerBound<T: Target>(value: T) throws -> Int64 {
+    func lowerBound<T: Target>(value: T) throws -> Int {
         guard value is Array.Generator.Element else { throw ArrayExtensionError.Generics }
         return 0
     }
