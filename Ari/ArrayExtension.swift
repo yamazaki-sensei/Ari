@@ -10,6 +10,7 @@ import Foundation
 
 enum ArrayExtensionError: ErrorType {
     case Generics
+    case InvalidTarget
 }
 
 protocol Target: Equatable, Comparable {
@@ -23,7 +24,23 @@ extension Array where Element: Target {
 
     func lowerBound<T: Target>(value: T) throws -> Int {
         guard value is Array.Generator.Element else { throw ArrayExtensionError.Generics }
-        return 0
+        let index = try! binarySearch(value)
+
+        if self.count <= index {
+            throw ArrayExtensionError.InvalidTarget
+        }
+
+        let found = self[index] as! T
+
+        if value <= found {
+            return index
+        }
+
+        if found <= value && index < self.count - 1 {
+            return index + 1
+        }
+
+        throw ArrayExtensionError.InvalidTarget
     }
 
     func binarySearch<T: Target>(value: T) throws -> Int {
