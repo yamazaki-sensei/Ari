@@ -64,4 +64,43 @@ class ArrayExtensionTest: XCTestCase {
         let c = try! array.binarySearch(8)
         print(index)
     }
+
+    func testLowerBoundTime() {
+        let array = (1 ... 10000000).map{ $0 * 273 } as [UInt64]
+        let starta = NSDate()
+        let target = UInt64(393939)
+
+        let x = try! array.lowerBound(target)
+        for y in array {
+            if target <= y {
+                XCTAssert(array[x] == y)
+                break
+            }
+        }
+
+
+        (0 ... 10000).forEach { i in
+            let a = try! array.lowerBound(target)
+            let value = array[a]
+        }
+        let enda = NSDate()
+
+        let startb = NSDate()
+        (0 ... 10000).forEach { i in
+            for b in array {
+                if target <= b {
+                    break
+                }
+            }
+        }
+        let endb = NSDate()
+
+        let diff1 = enda.timeIntervalSince1970 - starta.timeIntervalSince1970
+        let diff2 = endb.timeIntervalSince1970 - startb.timeIntervalSince1970
+
+        print(diff1)
+        print(diff2)
+
+        XCTAssert(diff1 < diff2)
+    }
 }

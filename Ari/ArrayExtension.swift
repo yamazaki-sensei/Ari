@@ -16,9 +16,10 @@ enum ArrayExtensionError: ErrorType {
 protocol Target: Equatable, Comparable {
 }
 
-extension Int: Target { }
-extension Float: Target { }
-extension Double: Target { }
+extension Int: Target {}
+extension Float: Target {}
+extension Double: Target {}
+extension UInt64: Target {}
 
 extension Array where Element: Target {
 
