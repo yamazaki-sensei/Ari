@@ -67,8 +67,7 @@ class ArrayExtensionTest: XCTestCase {
 
     func testLowerBoundTime() {
         let array = (1 ... 10000000).map{ $0 * 273 } as [UInt64]
-        let starta = NSDate()
-        let target = UInt64(393939)
+        let target = UInt64(3939391)
 
         let x = try! array.lowerBound(target)
         for y in array {
@@ -78,15 +77,16 @@ class ArrayExtensionTest: XCTestCase {
             }
         }
 
-
-        (0 ... 10000).forEach { i in
+        let starta = NSDate()
+        let count = 10000
+        (0 ... count).forEach { i in
             let a = try! array.lowerBound(target)
             let value = array[a]
         }
         let enda = NSDate()
 
         let startb = NSDate()
-        (0 ... 10000).forEach { i in
+        (0 ... count).forEach { i in
             for b in array {
                 if target <= b {
                     break
