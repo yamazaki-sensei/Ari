@@ -23,8 +23,11 @@ extension UInt64: Target {}
 
 extension Array where Element: Target {
 
+    /* value <= array[x] となる 最小のxを返す */
     func lowerBound<T: Target>(value: T) throws -> Int {
         guard value is Array.Generator.Element else { throw ArrayExtensionError.Generics }
+        guard let last = self.last where value <= last as! T else { throw ArrayExtensionError.InvalidTarget }
+
         let index = try! binarySearch(value)
 
         if self.count <= index {
