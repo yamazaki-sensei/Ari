@@ -11,21 +11,22 @@ import XCTest
 class ArrayExtensionTest: XCTestCase {
 
     func testCallLowerBound() {
-        let array: [Int] = [1, 2, 3, 4, 5, 6, 9, 13, 19]
+        let array: [Int] = [1, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 6, 6, 6, 6, 6, 9, 13, 19]
+
         let a = try! array.lowerBound(3)
-        XCTAssertEqual(a, 2)
+        XCTAssertEqual(a, array.indexOf(3)!)
 
         let b = try! array.lowerBound(7)
-        XCTAssertEqual(b, 6)
+        XCTAssertEqual(b, array.indexOf(9)!)
 
         let c = try! array.lowerBound(11)
-        XCTAssertEqual(c, 7)
+        XCTAssertEqual(c, array.indexOf(13)!)
 
         let d = try! array.lowerBound(13)
-        XCTAssertEqual(d, 7)
+        XCTAssertEqual(d, array.indexOf(13)!)
 
         let e = try! array.lowerBound(19)
-        XCTAssertEqual(e, 8)
+        XCTAssertEqual(e, array.indexOf(19)!)
 
         do {
             let f = try array.lowerBound(20)
@@ -35,7 +36,10 @@ class ArrayExtensionTest: XCTestCase {
             
         }
 
+        print(try! array.binarySearch(4))
 
+        let g = try! array.lowerBound(4)
+        XCTAssertEqual(g, array.indexOf(3)! + 2)
     }
 
     func testBinarySearch() {
@@ -55,6 +59,34 @@ class ArrayExtensionTest: XCTestCase {
             
         }
         XCTAssertTrue(caught)
+
+        let bigArray: [UInt64] = {
+            var array = [UInt64]()
+            (0 ... 10000000).forEach {
+                array.append($0 + $0 % 3)
+            }
+            return array
+        }()
+
+        let starta = NSDate()
+        (0 ... 20).forEach { _ in
+            let index = bigArray.indexOf(UInt64(arc4random_uniform(10000000 - 1)))
+        }
+        let enda = NSDate()
+
+        let diff1 = enda.timeIntervalSince1970 - starta.timeIntervalSince1970
+
+        let startb = NSDate()
+        (0 ... 20).forEach { _ in
+            let index = try! bigArray.binarySearch(UInt64(arc4random_uniform(10000000 - 1)))
+        }
+        let endb = NSDate()
+
+        let diff2 = endb.timeIntervalSince1970 - startb.timeIntervalSince1970
+
+        print(diff1)
+        print(diff2)
+        XCTAssert(diff2 < diff1)
     }
 
     func testBinarySearchWithNotIncludedValue() {
@@ -66,19 +98,22 @@ class ArrayExtensionTest: XCTestCase {
     }
 
     func testLowerBoundTime() {
-        let array = (1 ... 10000000).map{ $0 * 273 } as [UInt64]
-        let target = UInt64(3939391)
+        let array = (1 ... 10000000).map{ $0 + $0 % 3 } as [UInt64]
+        let target = UInt64(arc4random_uniform(10000000 - 10))
 
         let x = try! array.lowerBound(target)
         for y in array {
             if target <= y {
+                print(target)
+                print(y)
+                print(array[x])
                 XCTAssert(array[x] == y)
                 break
             }
         }
 
         let starta = NSDate()
-        let count = 10000
+        let count = 10
         (0 ... count).forEach { i in
             let a = try! array.lowerBound(target)
             let value = array[a]
