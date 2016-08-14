@@ -42,6 +42,29 @@ class ArrayExtensionTest: XCTestCase {
         XCTAssertEqual(g, array.indexOf(3)! + 2)
     }
 
+    func testLowerBound() {
+
+        let converter: (UInt64) -> [UInt64] = { [$0 * 4, $0 * 4, $0 * 4, $0 * 4] }
+        let arrayArray = (UInt64(1) ... UInt64(2_500_000)).map(converter) as [[UInt64]]
+        let array = arrayArray.flatMap{ $0 } as [UInt64]
+        var target = UInt64(1000000)
+
+        let x = try! array.lowerBound(target)
+        [0, 1, 2, 3].forEach { i in
+            target = target + UInt64(i)
+            for y in array {
+                if target <= y {
+                    print(target)
+                    print(y)
+                    print(array[x])
+                    XCTAssert(array[x] == y)
+                    break
+                }
+            }
+        }
+
+    }
+
     func testBinarySearch() {
         let array = [1, 2, 3, 4, 5]
         XCTAssertTrue(try array.binarySearch(1) == 0)
@@ -98,19 +121,11 @@ class ArrayExtensionTest: XCTestCase {
     }
 
     func testLowerBoundTime() {
-        let array = (1 ... 10000000).map{ $0 + $0 % 3 } as [UInt64]
-        let target = UInt64(arc4random_uniform(10000000 - 10))
 
-        let x = try! array.lowerBound(target)
-        for y in array {
-            if target <= y {
-                print(target)
-                print(y)
-                print(array[x])
-                XCTAssert(array[x] == y)
-                break
-            }
-        }
+        let converter: (UInt64) -> [UInt64] = { [$0 * 4, $0 * 4, $0 * 4, $0 * 4] }
+        let arrayArray = (UInt64(1) ... UInt64(2_500_000)).map(converter) as [[UInt64]]
+        let array = arrayArray.flatMap{ $0 } as [UInt64]
+        var target = UInt64(1000000)
 
         let starta = NSDate()
         let count = 10
