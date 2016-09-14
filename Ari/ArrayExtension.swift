@@ -50,7 +50,7 @@ extension Array where Element: Target {
     func binarySearch<T: Target>(value: T) throws -> Int {
         guard value is Array.Generator.Element else { throw ArrayExtensionError.Generics }
         var lo = 0
-        var hi = self.count
+        var hi = self.count - 1
         while lo < hi {
             let mid = lo + (hi - lo) / 2
             if (self[mid] as! T) < value {

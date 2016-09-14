@@ -42,27 +42,38 @@ class ArrayExtensionTest: XCTestCase {
         XCTAssertEqual(g, array.indexOf(3)! + 2)
     }
 
-    func testLowerBound() {
+    func testLowerBound1() {
+        let values = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5]
+        var target = try! values.lowerBound(0)
+        XCTAssert(target == 0)
 
-        let converter: (UInt64) -> [UInt64] = { [$0 * 4, $0 * 4, $0 * 4, $0 * 4] }
-        let arrayArray = (UInt64(1) ... UInt64(2_500_000)).map(converter) as [[UInt64]]
-        let array = arrayArray.flatMap{ $0 } as [UInt64]
-        var target = UInt64(1000000)
+        target = try! values.lowerBound(1)
+        XCTAssert(target == 4)
 
-        let x = try! array.lowerBound(target)
-        [0, 1, 2, 3].forEach { i in
-            target = target + UInt64(i)
-            for y in array {
-                if target <= y {
-                    print(target)
-                    print(y)
-                    print(array[x])
-                    XCTAssert(array[x] == y)
-                    break
-                }
-            }
-        }
+        target = try! values.lowerBound(2)
+        XCTAssert(target == 8)
 
+        target = try! values.lowerBound(3)
+        XCTAssert(target == 12)
+
+        target = try! values.lowerBound(4)
+        XCTAssert(target == 16)
+
+        target = try! values.lowerBound(5)
+        XCTAssert(target == 20)
+    }
+
+    func testLowerBound2() {
+        let values = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2]
+
+        var target = try! values.lowerBound(0)
+        XCTAssert(target == 0)
+
+        target = try! values.lowerBound(1)
+        XCTAssert(target == 5)
+
+        target = try! values.lowerBound(2)
+        XCTAssert(target == 15)
     }
 
     func testBinarySearch() {
