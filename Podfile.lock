@@ -1,0 +1,12 @@
+PODS:
+  - SwiftPriorityQueue (1.1.1)
+
+DEPENDENCIES:
+  - SwiftPriorityQueue
+
+SPEC CHECKSUMS:
+  SwiftPriorityQueue: cced1a141ab3cdbbd00fe1ec3b831c69a54cc2fd
+
+PODFILE CHECKSUM: 6dd2142f89ed40e78db90f39cca784f3461031b8
+
+COCOAPODS: 1.1.1

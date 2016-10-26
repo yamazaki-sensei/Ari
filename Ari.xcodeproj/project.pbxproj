@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3932872C8760E969EAC5F726 /* Pods_Ari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8334F7284E49C5468CBFCC00 /* Pods_Ari.framework */; };
 		4214ED741D4257EB00393834 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214ED731D4257EB00393834 /* ArrayExtension.swift */; };
 		4214ED801D466BFC00393834 /* AriTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214ED7F1D466BFC00393834 /* AriTest.swift */; };
 		4214ED851D466C0500393834 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214ED731D4257EB00393834 /* ArrayExtension.swift */; };
@@ -74,6 +75,9 @@
 		42EE19EA1D170212002CDFA9 /* P48.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P48.swift; sourceTree = "<group>"; };
 		42F795DB1D1C02F5004BB990 /* P54.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P54.swift; sourceTree = "<group>"; };
 		42F795DD1D1C19F0004BB990 /* P57.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P57.swift; sourceTree = "<group>"; };
+		5FAA4208FB50A6216FFC4BCB /* Pods-Ari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ari/Pods-Ari.debug.xcconfig"; sourceTree = "<group>"; };
+		8334F7284E49C5468CBFCC00 /* Pods_Ari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F50560614A1EE03F5F479A0 /* Pods-Ari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ari.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ari/Pods-Ari.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3932872C8760E969EAC5F726 /* Pods_Ari.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +123,8 @@
 				4224B91B1D12B24A004B0E38 /* Ari */,
 				4214ED7E1D466BFC00393834 /* AriTest */,
 				4224B91A1D12B24A004B0E38 /* Products */,
+				DFC691166C9501974CEAD193 /* Pods */,
+				76D8B5FA5A0FA3728A061131 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +166,23 @@
 			path = Ari;
 			sourceTree = "<group>";
 		};
+		76D8B5FA5A0FA3728A061131 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8334F7284E49C5468CBFCC00 /* Pods_Ari.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFC691166C9501974CEAD193 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FAA4208FB50A6216FFC4BCB /* Pods-Ari.debug.xcconfig */,
+				9F50560614A1EE03F5F479A0 /* Pods-Ari.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4224B9201D12B24A004B0E38 /* Build configuration list for PBXNativeTarget "Ari" */;
 			buildPhases = (
+				B36260E57A7C85EE747922B4 /* [CP] Check Pods Manifest.lock */,
 				4224B9151D12B24A004B0E38 /* Sources */,
 				4224B9161D12B24A004B0E38 /* Frameworks */,
 				4224B9171D12B24A004B0E38 /* CopyFiles */,
+				44EA11576590232CDAD5A430 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,6 +268,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44EA11576590232CDAD5A430 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ari/Pods-Ari-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B36260E57A7C85EE747922B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4214ED791D466BFC00393834 /* Sources */ = {
@@ -394,6 +453,7 @@
 		};
 		4224B9211D12B24A004B0E38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FAA4208FB50A6216FFC4BCB /* Pods-Ari.debug.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -402,6 +462,7 @@
 		};
 		4224B9221D12B24A004B0E38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F50560614A1EE03F5F479A0 /* Pods-Ari.release.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
