@@ -20,7 +20,7 @@ class P65: Base {
     }
 
     func main() {
-        var dp = Array<Int>(repeating: INF, count: a.count)
+        var dp = [Int](repeating: INF, count: a.count)
         (0 ..< a.count).forEach { i in
             let target = try! dp.lowerBound(a[i])
             dp[target] = a[i]

@@ -14,24 +14,24 @@ class ArrayExtensionTest: XCTestCase {
         let array: [Int] = [1, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 6, 6, 6, 6, 6, 9, 13, 19]
 
         let a = try! array.lowerBound(3)
-        XCTAssertEqual(a, array.indexOf(3)!)
+        XCTAssertEqual(a, array.index(of:3)!)
 
         let b = try! array.lowerBound(7)
-        XCTAssertEqual(b, array.indexOf(9)!)
+        XCTAssertEqual(b, array.index(of:9)!)
 
         let c = try! array.lowerBound(11)
-        XCTAssertEqual(c, array.indexOf(13)!)
+        XCTAssertEqual(c, array.index(of:13)!)
 
         let d = try! array.lowerBound(13)
-        XCTAssertEqual(d, array.indexOf(13)!)
+        XCTAssertEqual(d, array.index(of:13)!)
 
         let e = try! array.lowerBound(19)
-        XCTAssertEqual(e, array.indexOf(19)!)
+        XCTAssertEqual(e, array.index(of:19)!)
 
         do {
             let f = try array.lowerBound(20)
         } catch let e as ArrayExtensionError {
-            XCTAssertEqual(e, ArrayExtensionError.InvalidTarget)
+            XCTAssertEqual(e, ArrayExtensionError.invalidTarget)
         } catch {
             
         }
@@ -39,7 +39,7 @@ class ArrayExtensionTest: XCTestCase {
         print(try! array.binarySearch(4))
 
         let g = try! array.lowerBound(4)
-        XCTAssertEqual(g, array.indexOf(3)! + 2)
+        XCTAssertEqual(g, array.index(of:3)! + 2)
     }
 
     func testLowerBound1() {
@@ -87,7 +87,7 @@ class ArrayExtensionTest: XCTestCase {
         var caught = false
         do {
             try array.binarySearch(0.1)
-        } catch ArrayExtensionError.Generics {
+        } catch ArrayExtensionError.generics {
             caught = true
         } catch {
             
@@ -104,7 +104,7 @@ class ArrayExtensionTest: XCTestCase {
 
         let starta = NSDate()
         (0 ... 20).forEach { _ in
-            let index = bigArray.indexOf(UInt64(arc4random_uniform(10000000 - 1)))
+            let index = bigArray.index(of:UInt64(arc4random_uniform(10000000 - 1)))
         }
         let enda = NSDate()
 
