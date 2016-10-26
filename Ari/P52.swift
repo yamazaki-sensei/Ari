@@ -14,7 +14,7 @@ class P52: Base {
     let items: [Prop]
     let W: Int
 
-    private init(items: [Prop], W: Int) {
+    fileprivate init(items: [Prop], W: Int) {
         self.n = items.count
         self.items = items
         self.W = W
@@ -28,7 +28,7 @@ class P52: Base {
         print(rec(0, j: W))
     }
 
-    func rec(i: Int, j: Int) -> Int {
+    func rec(_ i: Int, j: Int) -> Int {
         var res: Int
 
         if i == n {

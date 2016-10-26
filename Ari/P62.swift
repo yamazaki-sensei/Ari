@@ -23,7 +23,7 @@ class P62: Base {
         self.K = K
     }
 
-    var dp: [[Bool]] = Array<[Bool]>(count: MAX_N + 1, repeatedValue: Array<Bool>(count: MAX_K + 1, repeatedValue: false))
+    var dp: [[Bool]] = Array<[Bool]>(repeating: Array<Bool>(repeating: false, count: MAX_K + 1), count: MAX_N + 1)
 
     static func main() {
         P62(a: [3, 5, 8], m: [3, 2, 2], K: 17).main()

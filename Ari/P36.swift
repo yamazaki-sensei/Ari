@@ -28,7 +28,7 @@ final class P36: Base {
     let M: Int
     let N: Int
 
-    private init(input: [String]) {
+    fileprivate init(input: [String]) {
         self.field = input.map {Array($0.characters)}
         self.M = input[0].characters.count
         self.N = input.count
@@ -49,7 +49,7 @@ final class P36: Base {
         print(res)
     }
 
-    func dfs(x: Int, y: Int) {
+    func dfs(_ x: Int, y: Int) {
         field[x][y] = "."
 
         for dx in -1 ... 1 {

@@ -15,9 +15,9 @@ class P61: Base {
     let items: [Prop]
     let W: Int64
 
-    var dp: [[Int64]] = Array<Array<Int64>>(count: MAX_N + 1, repeatedValue: Array<Int64>(count: MAX_N * MAX_V + 1, repeatedValue: Int64.max / 2))
+    var dp: [[Int64]] = Array<Array<Int64>>(repeating: Array<Int64>(repeating: Int64.max / 2, count: MAX_N * MAX_V + 1), count: MAX_N + 1)
 
-    private init(items: [Prop], W: Int64) {
+    fileprivate init(items: [Prop], W: Int64) {
         self.n = items.count
         self.items = items
         self.W = W

@@ -14,9 +14,9 @@ class P53: Base {
     let items: [Prop]
     let W: Int
 
-    var dp: [[Int]] = Array<Array<Int>>(count: 200, repeatedValue: Array<Int>(count: 200, repeatedValue: -1))
+    var dp: [[Int]] = Array<Array<Int>>(repeating: Array<Int>(repeating: -1, count: 200), count: 200)
 
-    private init(items: [Prop], W: Int) {
+    fileprivate init(items: [Prop], W: Int) {
         self.n = items.count
         self.items = items
         self.W = W
@@ -30,7 +30,7 @@ class P53: Base {
         print(rec(0, j: W))
     }
 
-    func rec(i: Int, j: Int) -> Int {
+    func rec(_ i: Int, j: Int) -> Int {
         if 0 <= dp[i][j] {
             return dp[i][j]
         }

@@ -18,9 +18,9 @@ final class P39:Base {
     var used: [Bool]
     var perm: [Int]
     let n: Int
-    private init(n: Int) {
-        used = Array<Bool>(count: n, repeatedValue: false)
-        perm = Array<Int>(count: n, repeatedValue: -1)
+    fileprivate init(n: Int) {
+        used = Array<Bool>(repeating: false, count: n)
+        perm = Array<Int>(repeating: -1, count: n)
         self.n = n
     }
 
@@ -28,7 +28,7 @@ final class P39:Base {
         permutation1(0, n: n)
     }
 
-    func permutation1(pos: Int, n: Int) {
+    func permutation1(_ pos: Int, n: Int) {
         guard pos != n else {
             return
         }

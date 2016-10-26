@@ -14,9 +14,9 @@ class P57: Base {
     let s: [Character]
     let t: [Character]
 
-    var dp: [[Int]] = Array<Array<Int>>(count: 1001, repeatedValue: Array<Int>(count: 1001, repeatedValue: 0))
+    var dp: [[Int]] = Array<Array<Int>>(repeating: Array<Int>(repeating: 0, count: 1001), count: 1001)
 
-    private init(s: String, t: String) {
+    fileprivate init(s: String, t: String) {
         self.s = Array(s.characters)
         self.t = Array(t.characters)
 

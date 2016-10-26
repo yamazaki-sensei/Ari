@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum ArrayExtensionError: ErrorType {
-    case Generics
-    case InvalidTarget
+enum ArrayExtensionError: Error {
+    case generics
+    case invalidTarget
 }
 
 protocol Target: Equatable, Comparable {
@@ -24,14 +24,14 @@ extension UInt64: Target {}
 extension Array where Element: Target {
 
     /* value <= array[x] となる 最小のxを返す */
-    func lowerBound<T: Target>(value: T) throws -> Int {
-        guard value is Array.Generator.Element else { throw ArrayExtensionError.Generics }
-        guard let last = self.last where value <= last as! T else { throw ArrayExtensionError.InvalidTarget }
+    func lowerBound<T: Target>(_ value: T) throws -> Int {
+        guard value is Array.Iterator.Element else { throw ArrayExtensionError.generics }
+        guard let last = self.last , value <= last as! T else { throw ArrayExtensionError.invalidTarget }
 
         let index = try! binarySearch(value)
 
         if self.count <= index {
-            throw ArrayExtensionError.InvalidTarget
+            throw ArrayExtensionError.invalidTarget
         }
 
         let found = self[index] as! T
@@ -44,11 +44,11 @@ extension Array where Element: Target {
             return index + 1
         }
 
-        throw ArrayExtensionError.InvalidTarget
+        throw ArrayExtensionError.invalidTarget
     }
 
-    func binarySearch<T: Target>(value: T) throws -> Int {
-        guard value is Array.Generator.Element else { throw ArrayExtensionError.Generics }
+    func binarySearch<T: Target>(_ value: T) throws -> Int {
+        guard value is Array.Iterator.Element else { throw ArrayExtensionError.generics }
         var lo = 0
         var hi = self.count - 1
         while lo < hi {

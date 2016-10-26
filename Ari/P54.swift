@@ -14,9 +14,9 @@ class P54: Base {
     let items: [Prop]
     let W: Int
 
-    var dp: [[Int]] = Array<Array<Int>>(count: 200, repeatedValue: Array<Int>(count: 200, repeatedValue: 0))
+    var dp: [[Int]] = Array<Array<Int>>(repeating: Array<Int>(repeating: 0, count: 200), count: 200)
 
-    private init(items: [Prop], W: Int) {
+    fileprivate init(items: [Prop], W: Int) {
         self.n = items.count
         self.items = items
         self.W = W
@@ -30,8 +30,8 @@ class P54: Base {
         print(rec(0, j: W))
     }
 
-    func rec(i: Int, j: Int) -> Int {
-        (0 ... n - 1).reverse().forEach { i in
+    func rec(_ i: Int, j: Int) -> Int {
+        (0 ... n - 1).reversed().forEach { i in
             (0 ... W).forEach({ j in
                 if j < self.items[i].w {
                     dp[i][j] = dp[i + 1][j]

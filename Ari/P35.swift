@@ -25,7 +25,7 @@ final class P35:Base {
     let a: [Int]
     let k: Int
 
-    private init(a: [Int], k: Int) {
+    fileprivate init(a: [Int], k: Int) {
         self.n = a.count
         self.a = a
         self.k = k
@@ -41,7 +41,7 @@ final class P35:Base {
         print(result)
     }
 
-    func dfs(i: Int, sum: Int) -> Bool {
+    func dfs(_ i: Int, sum: Int) -> Bool {
         guard i != n else {
             return sum == k
         }

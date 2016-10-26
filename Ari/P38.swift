@@ -40,7 +40,7 @@ final class P38: Base {
     var d: [[Int]]!
 
 
-    private init(input: [String]) {
+    fileprivate init(input: [String]) {
         maze = input.map {Array($0.characters)}
         N = input[0].characters.count - 1
         M = input.count
@@ -66,7 +66,7 @@ final class P38: Base {
             }
         }
 
-        d = Array(count: M, repeatedValue: Array(count: N, repeatedValue: INF))
+        d = Array(repeating: Array(repeating: INF, count: N), count: M)
 
         queue.append(start)
         d[start.0][start.1] = 0

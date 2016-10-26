@@ -17,7 +17,7 @@ final class P42: Base {
 
     func main() {
         var ans = 0
-        for i in (0 ... 5).reverse() {
+        for i in (0 ... 5).reversed() {
             let t = min(A / V[i], C[i])
             A -= t * V[i]
             ans += t

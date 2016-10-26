@@ -13,12 +13,12 @@ class P44: Base {
     let S: [Int], T:[Int]
     var itv: [(Int, Int)]
 
-    private init(S: [Int], T: [Int]) {
+    fileprivate init(S: [Int], T: [Int]) {
         self.S = S
         self.T = T
         self.N = S.count
 
-        itv = Array<(Int, Int)>(count: N, repeatedValue: (0, 0))
+        itv = Array<(Int, Int)>(repeating: (0, 0), count: N)
     }
 
     static func main() {
@@ -31,7 +31,7 @@ class P44: Base {
             itv[i].1 = S[i]
         }
 
-        itv = itv.sort({ (obj1, obj2) -> Bool in
+        itv = itv.sorted(by: { (obj1, obj2) -> Bool in
             obj1.0 <= obj2.0
         })
 

@@ -9,7 +9,7 @@
 private let MAX_K = 100_000
 class P63: Base {
 
-    var dp: [Int] = Array<Int>(count: MAX_K, repeatedValue: -1)
+    var dp: [Int] = Array<Int>(repeating: -1, count: MAX_K)
     var a: [Int]
     var m: [Int]
     var K: Int
@@ -18,7 +18,7 @@ class P63: Base {
         P63(a: [3, 5, 8], m: [3, 2, 2], K: 17).main()
     }
 
-    private init(a: [Int], m: [Int], K: Int) {
+    fileprivate init(a: [Int], m: [Int], K: Int) {
         self.a = a
         self.m = m
         self.K = K
